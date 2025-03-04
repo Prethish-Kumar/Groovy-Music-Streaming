@@ -1,4 +1,4 @@
-# 🎵 Groovy – A Collaborative Music Streaming Platform 🎶  
+# 🎵 Groovy – A Collaborative Music Streaming Platform
 
 Welcome to **Groovy** – a full-stack music streaming platform inspired by Spotify! 🚀 This project creates an inclusive ecosystem where **Users** can listen to songs, **Creators** can upload their music, and **Admins** can manage the platform seamlessly.  
 
