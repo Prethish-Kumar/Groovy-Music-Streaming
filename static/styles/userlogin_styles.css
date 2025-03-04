@@ -1,0 +1,88 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+body {
+     min-height: 100%;
+     overflow: hidden;
+     background-color: #000000 !important;
+     animation: slideIn 0.5s ease-in; 
+ }
+
+ @keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeIn {  
+    from {  
+        opacity:0;  
+    }  
+ 
+    to {  
+        opacity:1;  
+    }  
+ }
+
+.col-md-7{
+    padding: 0px !important; 
+    height: 100vh;
+    position: relative;
+    display: flex;
+    background-color: #000000;
+}
+
+.video-container video {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+}
+
+.content {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translate(0,-50%);
+    color: #f1f1f1;
+    text-align: center;
+}  
+
+h1{
+    margin-bottom: 50px !important;
+    font-size: 50px !important;
+    background: -webkit-linear-gradient(#8E64BC, #E98860);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+.col-md-5{
+    color: white;
+    padding: 0px !important; 
+    height: 100vh;
+    position: relative;
+    background-color: #000000;
+}
+
+.form{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50% !important;
+}
+
+.form-check{
+    margin-top: 10px !important;
+    margin-bottom: 20px !important;
+}
+
+.center-button{
+    display: block !important;
+    margin: auto;
+}
+

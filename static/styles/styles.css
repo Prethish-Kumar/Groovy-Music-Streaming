@@ -1,0 +1,55 @@
+body{
+    background-color: black;
+}
+#myVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+  }
+.content {
+    position: fixed;
+    top: 15%;
+    text-align: center;
+    color: #f1f1f1;
+    width: 100%;
+}  
+
+.Content_button{
+    position: fixed;
+    top: 65%;
+    color: #f1f1f1;
+    width: 100%;
+    text-align: center;
+}
+
+.Content_button a{ 
+    background-image: linear-gradient(to right, #DA22FF 0%, #9733EE  51%, #DA22FF  100%);
+    padding: 15px 40px;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;            
+    border-radius: 10px;
+    text-decoration: none;
+}
+.Content_button a:hover{ 
+    background-position: right center; /* change the direction of the change here */
+    color: #fff;
+    text-decoration: none;
+}
+
+
+
+
+
+button, input[type="submit"], input[type="reset"] {
+	background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
