@@ -1,0 +1,31 @@
+body{
+    background-color: rgb(15, 15, 15) !important;
+    overflow-x: hidden;
+}
+
+.navbar{
+    height: 5vh;
+}
+
+.card-container {
+    display: flex;
+    width: 100%;
+    padding: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.title {
+    display: flex;
+    padding: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    color: white;
+    font-size: 72px;
+}
+
+
+.card {
+    flex: 0 0 auto;
+    margin-right: 20px;
+}

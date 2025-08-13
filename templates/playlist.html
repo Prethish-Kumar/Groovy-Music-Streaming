@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Groovy - Home</title>
+    <link rel="stylesheet" href="../static/styles/playlist_styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="/home" style="margin-left: 20px;">
+            <img src="../static/Images/navbar-logo.png" width="150" height="30" alt="Logo">
+        </a>
+    
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <form class="form-inline mx-auto" action="/search" method="get">
+                <div class="input-group">
+                    <input type="text" class="form-control" name="q" placeholder="Search" style="width: 700px;">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary" type="submit">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item dropdown" style="margin-right: 20px;">
+                <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                   Welcome,{{ username }} <i class="fa fa-user-circle fa-2x" style="color: white;" aria-hidden="true"></i>
+                </a>
+                <div class="dropdown-menu " aria-labelledby="userDropdown">
+                    <a class="dropdown-item" href="/home">Home</a>
+                    <a class="dropdown-item" href="/userdashboard">Profile</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="/logout">Logout</a>
+                </div>
+            </li>
+        </ul>
+    </nav> 
+
+ <div class="container-fluid">
+    <div class="row mt-3" id="top-row">
+        <div class="col-md-4">
+            <div class="cover-container">
+                <img class="album-cover" src="https://i.imgur.com/z67n2Hb.jpg" height="500px" referrerpolicy="no-referrer" alt="">
+            </div>
+        </div>
+
+        <div class="col-md-8 text-white">
+            <div class="text-container">
+                {{playlist[2]}}
+                    <br>
+                    Playlist Curated By {{playlist[1]}}
+            </div>
+            <div class="playbutton-container mt-3">             
+                <div class="playbutton-container mt-3">
+                    <button class="editbutton" onclick="playAudio('audio1')">
+                        <i class="fas fa-play fa-2x" aria-hidden="true"></i>
+                    </button>
+                    <button class="editbutton" onclick="pauseAudio('audio1')">
+                        <i class="fas fa-pause fa-2x" aria-hidden="true"></i>
+                    </button>
+
+            </div>
+        </div>
+    </div>
+
+ </div>
+
+   
+ {% for song in songs %}
+ <div class="card">
+    <div class="card-body">
+      <img src="https://static-cse.canva.com/blob/1259055/1600w-1Nr6gsUndKw.jpg" class="img-fluid" alt="Album Cover" style="max-width: 100px; float: left; margin-right: 10px;">
+      <h5 style="margin-bottom: 0px;" class="card-title text-white">{{song[2]}}</h5>
+      <p style="padding-top: 0px;padding-bottom: 0px; margin-bottom: 0px;" class="card-text text-white">{{song[1]}}</p>
+      <audio id="audio{{loop.index}}" src="../static/music/{{song[3]}}"></audio>
+      <a href="#" onclick="playAudio('audio{{loop.index}}')" class="btn btn-primary">Play</a>
+      <a href="#" onclick="pauseAudio('audio{{loop.index}}')" class="btn btn-primary">Pause</a>
+    </div>
+  </div>
+  {% endfor %}
+  
+</div>
+
+</body>
+
+<script>
+
+  function playAudio(audioId) {
+    var audio = document.getElementById(audioId);
+      audio.play();
+  }
+
+  function pauseAudio(audioId) {
+    var audio = document.getElementById(audioId);
+      audio.pause();
+  }
+
+    function togglePopup() {
+    document.getElementById("popup-1")
+     .classList.toggle("active");
+   }
+   </script>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js"></script>
