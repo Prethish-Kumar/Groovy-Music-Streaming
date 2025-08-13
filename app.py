@@ -14,6 +14,9 @@ app.secret_key = 'IITM'
 
 @app.route('/')
 def index():
+    print("Template folder path:", app.template_folder)
+    print("Current working directory:", os.getcwd())
+    print("Contents of template folder:", os.listdir(app.template_folder))
     return render_template("index.html")
 
 # Sign Up, Login & Logout
